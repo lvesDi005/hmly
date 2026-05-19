@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+<head>
+    <!-- 指定字符集 -->
+    <meta charset="utf-8">
+    <!-- 使用Edge最新的浏览器的渲染方式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+    width: 默认宽度与设备的宽度相同
+    initial-scale: 初始的缩放比，为1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>订单管理系统</title>
+
+    <!-- 1. 导入CSS的全局样式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/getParameter.js"></script>
+    <style type="text/css">
+        td, th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3 style="text-align: center">订单信息列表</h3>
+    <table border="1" class="table table-bordered table-hover" id="form">
+        <tr class="success">
+            <th>姓名</th>
+            <th>订单详细信息</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td><a class="btn btn-default btn-sm" href="order_list.html">详细信息</a>
+        </tr>
+    </table>
+</div>
+<script>
+    $(function () {
+        var lis="";
+        lisfirst=' <tr class="success" style="color: aqua">\n' +
+            '            <th style="color: #0e9aef">姓名</th>\n' +
+            '            <th style="color: #0e9aef">订单详细信息</th>\n' +
+            '        </tr>';
+        lis+=lisfirst;
+        $.post("route/findOrderName",{},function (users) {
+            for (var i = 0; i <users.length ; i++) {
+                lis+=' <tr>\n' +
+                    '            <td>'+users[i].name+'</td>\n' +
+                    '            <td><a class="btn btn-default btn-sm" href="order_list.html?uid='+users[i].uid+'&cid=2">详细信息</a>\n' +
+                    '        </tr>';
+            }
+            $("#form").html(lis);
+        });
+    })
+</script>
+</body>
+</html>

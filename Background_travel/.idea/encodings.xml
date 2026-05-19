@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM">
+    <file url="file://$PROJECT_DIR$/pom.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/FavoriteDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/Impl/RouteDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/Impl/RouteImgeDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/Impl/SellerDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/Impl/UserDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/RouteDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/SellerDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/dao/UserDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/Category.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/Favorite.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/Hotel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/ResultInfo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/Route.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/RouteImg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/Seller.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/domain/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/service/Impl/FavoriteServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/service/Impl/RouteServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/service/Impl/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/service/RouteService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/service/UserService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/util/JDBCUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/util/JedisUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/util/MailUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/util/Md5Util.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/util/UuidUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/web/servlet/RouteServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/background_travel/web/servlet/UserServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/footer.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/header.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img/product" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/login1.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/route_detail.html" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

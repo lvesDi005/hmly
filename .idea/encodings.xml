@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/travel/src/main/java/cn/itcast/travel/dao/RouteDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/travel/src/main/java/cn/itcast/travel/service/UserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/travel/src/main/java/cn/itcast/travel/web/servlet/RouteServlet.java" charset="GBK" />
+  </component>
+</project>

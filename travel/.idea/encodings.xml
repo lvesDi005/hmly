@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/FavoriteDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/HotelImgeDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/RouteImgeDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/impl/FavoriteDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/impl/HotelDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/impl/RouteDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/dao/impl/UserDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/domain/PageBean.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/service/FavoriteService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/service/RouteService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/service/impl/CategoryServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/service/impl/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/ActiveUserServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/BaseServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/FindUserServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/LoginServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/RouteServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/itcast/travel/web/servlet/UserServlet.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <title>新增用户</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+
+    <style>
+        .droppable-active {
+            background-color: #ffe !important;
+        }
+
+        .tools a {
+            cursor: pointer;
+            font-size: 80%;
+        }
+
+        .form-body .col-md-6,
+        .form-body .col-md-12 {
+            min-height: 400px;
+        }
+
+        .draggable {
+            cursor: move;
+        }
+
+    </style>
+
+</head>
+
+<body>
+        <div class="ibox-content" style="width: 1299px">
+        <div class="rg_form_center">
+            <div id="errorMsg" style="color: #714141;text-align: center"></div>
+            <form id="adduser" action="user" method="post">
+
+            <table style="margin-top: 25px;">
+                <tr>
+                    <td class="td_left">
+                        <label for="username">用户名</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="username" name="username" placeholder="请输入账号">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="password">密码</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="password" name="password" placeholder="请输入密码">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="email">Email</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="email" name="email" placeholder="请输入Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="name">姓名</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="name" name="name" placeholder="请输入真实姓名">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="telephone">手机号</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="text" id="telephone" name="telephone" placeholder="请输入您的手机号">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="sex">性别</label>
+                    </td>
+                    <td class="td_right gender">
+                        <input type="radio" id="sex" name="sex" value="男" checked> 男
+                        <input type="radio" name="sex" value="女"> 女
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                        <label for="birthday">出生日期</label>
+                    </td>
+                    <td class="td_right">
+                        <input type="date" id="birthday" name="birthday" placeholder="年/月/日">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="td_left">
+                    </td>
+                    <td class="td_right">
+                        <input type="radio" name="status" value="Y" checked>Y
+                        <input type="radio" name="status" value="N">N
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left">
+                    </td>
+                    <td class="td_right check">
+                        <input type="submit" class="submit" value="注册">
+                        <span id="msg" style="color: #ff0000;"></span>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        </div>
+    <!-- 全局js -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        /*
+        表单校验：
+               1.用户名：单词字符，长度8-20
+               2.密码：单词字符，长度8-20
+               3.email:邮件格式
+               4.姓名：非空
+               5.手机号：手机号格式
+               6.出生日期：非空
+               7.验证码：非空
+         */
+        //校验用户名
+        function checkUsername() {
+            //1.获取用户名值
+            var username = $("#username").val();
+            //2.定义正则
+            var  reg_username=/^\w{8,20}$/;
+            //3.判断，给出提示信息
+            var flag = reg_username.test(username);
+            if (flag){
+                //用户名合法
+                $("#username").css("border","");
+            }else {
+                //用户名非法
+                $("#username").css("border","1px solid red");
+            }
+            return flag;
+
+        }
+        //校验密码
+        function checkPassword(){
+            //1.获取用户名值
+            var password = $("#password").val();
+            //2.定义正则
+            var  reg_password=/^\w{8,20}$/;
+            //3.判断，给出提示信息
+            var flag = reg_password.test(password);
+            if (flag){
+                //用户名合法
+                $("#password").css("border","");
+            }else {
+                //用户名非法
+                $("#password").css("border","1px solid red");
+            }
+            return flag;
+        }
+        //校验邮箱
+        function checkEmail(){
+            //获取邮箱
+            var email = $("#email").val();
+            //定义正则
+            var reg_email=/^\w+@\w+\.\w+$/;
+            var flag = reg_email.test(email);
+            if (flag){
+                $("#email").css("border","");
+            }else {
+                $("#email").css("border","1px solid red");
+            }
+            return flag;
+        }
+        $(function () {
+            //当表单提交时，调用所有的校验方法
+            $("#adduser").submit(function () {
+                //发送数据到服务器
+                if (checkUsername() && checkPassword()&&checkEmail()){
+                    //校验通过，发送ajax请求，提交表单的数据
+                    //serialize()序列化表单内容，将数据转换成key=value
+                    //this指的是registerForm，但是this是js对象，所以需要转换成jquery对象
+                    $.post("user/addUser",$(this).serialize(),function (data) {
+                        //处理服务器响应的数据data
+                        if (data.flag){
+                            //注册成功，跳转成功页面
+                           alert("添加成功！")
+                            location.href="/backTravel/table_info.html"
+                        }else {
+                            //注册失败
+                            $("#errorMsg").html(data.errorMsg);
+                        }
+
+                    });
+                }
+                //跳转页面
+
+                return false;
+                //如果这个方法没有返回值，或者返回true，则表单提交，如果返回false，则表单不提交
+            });
+            //当某一个组件失去焦点时，调用对应的校验方法
+            $("#username").blur(checkUsername);
+            $("#password").blur(checkPassword);
+            $("#email").blur(checkEmail);
+        });
+    </script>
+
+</body>
+
+</html>

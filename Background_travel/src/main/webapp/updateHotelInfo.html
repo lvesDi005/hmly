@@ -1,0 +1,113 @@
+<!-- HTML5文档-->
+<!DOCTYPE html>
+<!-- 网页使用的语言 -->
+<html lang="zh-CN">
+<head>
+    <!-- 指定字符集 -->
+    <meta charset="utf-8">
+    <!-- 使用Edge最新的浏览器的渲染方式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport视口：网页可以根据设置的宽度自动进行适配，在浏览器的内部虚拟一个容器，容器的宽度与设备的宽度相同。
+    width: 默认宽度与设备的宽度相同
+    initial-scale: 初始的缩放比，为1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>添加用户</title>
+
+    <!-- 1. 导入CSS的全局样式 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/getParameter.js"></script>
+</head>
+<body>
+<div class="container">
+    <center><h3>更新酒店</h3></center>
+    <center><span style="color: red" id="message"></span></center>
+    <form  id="registerForm"  action="javascript:void(0)" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" id="rid" name="rid" style="display: none" placeholder="请输入酒店类型">
+        </div>
+
+        <div class="form-group">
+            <label for="rname">酒店名称</label>
+            <input type="text" class="form-control" id="rname" name="rname" placeholder="请输入酒店名称">
+        </div>
+
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="请输入价格">
+        </div>
+
+        <div class="form-group">
+            <label for="routeIntroduce">介绍</label>
+            <input type="text" class="form-control" id="routeIntroduce" name="routeIntroduce" placeholder="请输入介绍">
+        </div>
+
+        <div class="form-group">
+            <label for="rflag">rflag</label>
+            <input type="text" class="form-control" id="rflag" name="rflag"  value="1" readonly="readonly" placeholder="请输入rflag"/>
+        </div>
+        <div class="form-group">
+            <label for="rdate">rdate</label>
+            <input type="date" id="rdate" name="rdate" placeholder="年/月/日">
+        </div>
+        <div class="form-group">
+            <label for="isThemeTour">isThemeTour</label>
+            <input type="text" class="form-control" id="isThemeTour" name="isThemeTour" value="0"  readonly="readonly" placeholder="请输入isThemeTour"/>
+        </div>
+        <div class="form-group">
+            <label for="count">count</label>
+            <input type="text" class="form-control" id="count" name="count" placeholder="请输入count"/>
+        </div>
+        <div class="form-group">
+            <label for="cid">cid</label>
+            <input type="text" class="form-control" id="cid" name="cid" value="2" readonly="readonly" placeholder="请输入cid"/>
+        </div>
+        <div class="form-group">
+            <label for="rimage">rimage</label>
+            <input type="text" class="form-control" id="rimage" name="rimage" value="img/product/smalll/84d6b3bae1097071e2aaa0db4ba48858.jpeg" readonly="readonly" placeholder="请输入rimage"/>
+        </div>
+        <div class="form-group">
+            <label for="sid">sid</label>
+            <input type="text" class="form-control" id="sid" name="sid" value="1" readonly="readonly" placeholder="请输入sid"/>
+        </div>
+
+        <div class="form-group" style="text-align: center">
+            <input class="btn btn-primary" type="submit" value="提交" onclick="submithotel()" />
+            <input href="adduserlist.html" class="btn btn-default" type="reset" value="重置" />
+            <a href="http://localhost/manage/index.html"><input class="btn btn-default" type="button" value="返回" /></a>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        var rid = getParameter("rid");
+        var cid = getParameter("cid");
+        $.post("route/findOne1",{rid:rid,cid:cid},function (hotel) {
+            $("#rid").val(hotel.rid);
+            $("#rname").val(hotel.rname);
+            $("#price").val(hotel.price);
+            $("#routeIntroduce").val(hotel.routeIntroduce);
+            $("#rflag").val(hotel.rflag);
+            $("#rdate").val(hotel.rdate);
+            $("#isThemeTour").val(hotel.isThemeTour);
+            $("#count").val(hotel.count);
+            $("#rimage").val(hotel.rimage);
+            $("#sid").val(hotel.sid);
+            $("#cid").val(hotel.cid);
+        });
+    });
+
+    function submithotel(){
+        $.post("route/updateRoute",$("#registerForm").serialize(),function (info) {
+            $("#message").html(info.errorMsg)
+        });
+    }
+</script>
+</body>
+</html>
